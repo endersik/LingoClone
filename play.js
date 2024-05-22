@@ -5,6 +5,12 @@ let answer = [" "]
 const input = document.getElementById("guess")
 const submit = document.getElementById("submit")
 
+const menu = document.getElementById("menu")
+const exit = document.getElementById("exit")
+
+menu.addEventListener("click", () => window.location = "menu.html")
+exit.addEventListener("click", () => window.location = "board.html")
+
 const gameBoard = document.querySelector(".rows")
 const startRows = ["", "", "", "", ""]
 let rowElement
@@ -39,7 +45,7 @@ function getRandomInt(max) {
   }
 
 const setAnswer = () => {
-    answer = data[getRandomInt(5)]
+    answer = data[getRandomInt(5)].split("")
 }
 
 
@@ -56,6 +62,7 @@ const setLetters = (index) => {
             cells[i].innerHTML = letters[i]
         }
         rowNum++
+        controlAnswer()
 }
 
 submit.addEventListener("click", () => {
@@ -67,6 +74,12 @@ submit.addEventListener("click", () => {
     setLetters(rowNum)
 })
 
+const controlAnswer = () => {
+    let isCorrect = JSON.stringify(answer) == JSON.stringify(viewData) ? true : false;
+    isCorrect || rowNum > 4 ?  window.location = "board.html" : true;
+}
+
 createBoard()
 setAnswer()
 setLetters(rowNum)
+

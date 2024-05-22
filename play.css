@@ -18,10 +18,14 @@ body {
     justify-content: center;
 }
 
-.input {
+.leftScreen {
     flex: 1;
     background-color: green;
     padding: 30px;
+}
+
+.input {
+    margin-top: 80%;
 }
 
 #guess {
@@ -31,6 +35,11 @@ body {
 
 #submit {
     font-size: 64px;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 10%;
 }
 
 .game {
