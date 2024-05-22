@@ -1,5 +1,6 @@
 body {
     display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .container {
@@ -66,4 +67,6 @@ body {
     width: 150px;
     height: 150px;
     background-color: blueviolet;
+    font-size: 20mm;
+    font-weight: bolder;
 }

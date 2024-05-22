@@ -1,3 +1,5 @@
+const data = ["CHAIN", "AWARD", "JOINT", "PARTY", "WHEEL"]
+
 const gameBoard = document.querySelector(".rows")
 const startRows = ["", "", "", "", ""]
 let rowElement
@@ -21,4 +23,14 @@ const createCells = () => {
     })
 }
 
+const setLetters = () => {
+    const row = document.getElementById("0")
+    const cells = row.getElementsByTagName("span")
+    for(let i=0; i<cells.length; i++){
+        const letters = data[0].split("")
+        cells[i].innerHTML = letters[i]
+    }
+}
+
 createBoard()
+setLetters()
