@@ -44,6 +44,9 @@ const createCells = () => {
 ````
 const data = ["CHAIN", "AWARD", "JOINT", "PARTY", "WHEEL"]
 
+// This function uses `Math.random()` to generate a random decimal number
+// between 0 (inclusive) and 1 (exclusive). It then multiplies this number
+// by `max` to get a value within the range [0, max)
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
