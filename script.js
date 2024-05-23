@@ -1,15 +1,11 @@
 const data = ["CHAIN", "AWARD", "JOINT", "PARTY", "WHEEL"]
 let viewData = [".", ".", ".", ".", "."]
 let answer = [" "]
+let score = 0
 
 const input = document.getElementById("guess")
 const submit = document.getElementById("submit")
 
-const menu = document.getElementById("menu")
-const exit = document.getElementById("exit")
-
-menu.addEventListener("click", () => window.location = "menu.html")
-exit.addEventListener("click", () => window.location = "board.html")
 
 const gameBoard = document.querySelector(".rows")
 const startRows = ["", "", "", "", ""]
@@ -61,7 +57,6 @@ const setLetters = (index) => {
             const letters = viewData
             cells[i].innerHTML = letters[i]
         }
-        rowNum++
         controlAnswer()
 }
 
@@ -76,7 +71,20 @@ submit.addEventListener("click", () => {
 
 const controlAnswer = () => {
     let isCorrect = JSON.stringify(answer) == JSON.stringify(viewData) ? true : false;
-    isCorrect || rowNum > 4 ?  window.location = "board.html" : true;
+    if(isCorrect){
+        score = 50 - ((rowNum-1) * 10);
+        
+        alert(`Congratulations! Your score is ${score}`)
+        location.reload()
+    } else {
+        rowNum++
+        if (rowNum > 4){
+            alert("Sorry, you couldn't find the answer.")
+            location.reload()
+        }
+
+    }
+
 }
 
 createBoard()

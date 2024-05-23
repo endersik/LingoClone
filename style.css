@@ -10,6 +10,7 @@ body {
     bottom: 0;
     right: 0;
     left: 0;
+    background-image: url("./img/background.jpg");
 }
 
 .gameplay, .rows, .row, .cell {
@@ -20,7 +21,6 @@ body {
 
 .leftScreen {
     flex: 1;
-    background-color: green;
     padding: 30px;
 }
 
@@ -44,20 +44,13 @@ body {
 
 .game {
     flex: 4;
-    background-color: blue;
     display: flex;
     flex-direction: column;
-}
-
-.topbar {
-    flex: 1;
-    background-color: red;
 }
 
 
 .gameplay {
     flex: 9;
-    background-color: aquamarine;
     flex-direction: row;
 }
 
@@ -66,14 +59,12 @@ body {
     width: 100%;
     height: 100%;
     gap: 40px;
-    background-color: beige;
 }
 
 .row {
     width: 900px;
     height: 250px;
     gap: 20px;
-    background-color: brown;
 }
 
 .cell {
