@@ -28,7 +28,7 @@ const createCells = () => {
     startRows.forEach((cell, index) => {
         const cellElement = document.createElement("span")
         cellElement.classList.add("cell")
-        cellElement.id = index
+        cellElement.id = index // Creates distinct id namess for cell elements 
         rowElement.append(cellElement)
     })
 }
